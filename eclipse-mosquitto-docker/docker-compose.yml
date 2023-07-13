@@ -1,0 +1,15 @@
+version: '3'
+
+name: eclipse-mosquitto-docker
+
+services:
+
+  eclipse-mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./log/:/mosquitto/log/
+      - ./data/:/mosquitto/data/
+      - ./config/:/mosquitto/config/
